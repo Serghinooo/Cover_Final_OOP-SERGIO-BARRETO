@@ -1,4 +1,7 @@
+import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
+import java.util.LinkedHashSet;
 
 public class Workshop {
     public static void main(String[] args) {
@@ -128,6 +131,7 @@ public class Workshop {
 
         return mayor;
     }
+
     // Método que encuentra el elemento menor en un arreglo
     public int encontrarElementoMenor(int[] arreglo) {
         if (arreglo == null || arreglo.length == 0) {
@@ -144,6 +148,7 @@ public class Workshop {
 
         return menor;
     }
+
     // Método que busca un elemento en un arreglo
     public boolean buscarElemento(int[] arreglo, int elemento) {
         if (arreglo == null || arreglo.length == 0) return false;
@@ -173,17 +178,36 @@ public class Workshop {
 
     // Método que ordena un arreglo en orden ascendente
     public int[] ordenarArreglo(int[] arreglo) {
-        // TODO: Implementar el método para ordenar un arreglo en orden ascendente.
-        // Ejemplo: Si arreglo = [5, 4, 3, 2, 1], el resultado debería ser [1, 2, 3, 4, 5].
-        return new int[0];
+        if (arreglo == null) return null;
+
+        int[] copia = arreglo.clone();
+        Arrays.sort(copia);
+        return copia;
     }
+
 
     // Método que elimina los duplicados de un arreglo
     public int[] eliminarDuplicados(int[] arreglo) {
-        // TODO: Implementar el método para eliminar los duplicados de un arreglo.
-        // Ejemplo: Si arreglo = [1, 2, 2, 3, 4, 4, 5], el resultado debería ser [1, 2, 3, 4, 5].
-        return new int[0];
+        if (arreglo == null) return null;
+        if (arreglo.length == 0) return new int[0];
+
+        // Usamos LinkedHashSet para mantener el orden de aparición
+        Set<Integer> conjunto = new LinkedHashSet<>();
+
+        for (int valor : arreglo) {
+            conjunto.add(valor);
+        }
+
+        // Convertir Set a arreglo
+        int[] resultado = new int[conjunto.size()];
+        int i = 0;
+        for (int valor : conjunto) {
+            resultado[i++] = valor;
+        }
+
+        return resultado;
     }
+
 
     // Método que combina dos arreglos en uno solo
     public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
