@@ -435,7 +435,6 @@ public class Workshop {
         if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) return "Aquarius";
         if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) return "Pisces";
 
-        return "Invalid Date";
-    }
+        return "Invalid Date";    }
 
 }
