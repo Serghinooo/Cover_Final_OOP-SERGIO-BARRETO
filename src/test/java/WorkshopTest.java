@@ -217,11 +217,11 @@ public class WorkshopTest {
     @Test
     public void testContarCaracteres() {
         // Test 1: Contar caracteres en cadena
-        assertEquals(13, tester.contarCaracteres("Hola mundo"));
+        assertEquals(10, tester.contarCaracteres("Hola mundo"));
         // Test 2: Contar caracteres en cadena vacía
         assertEquals(0, tester.contarCaracteres(""));
         // Test 3: Contar caracteres en cadena con espacios
-        assertEquals(14, tester.contarCaracteres("Hola   mundo"));
+        assertEquals(12, tester.contarCaracteres("Hola   mundo"));
     }
 
     // Test para el método invertirCadena
