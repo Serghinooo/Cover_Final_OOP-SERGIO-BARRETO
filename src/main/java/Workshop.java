@@ -9,13 +9,18 @@ public class Workshop {
     public int sumarDosNumeros(int a, int b) {
         // TODO: Implementar el método para retornar la suma de dos números enteros.
         // Ejemplo: Si a = 3 y b = 5, el resultado debería ser 8.
-        return a+b;
-
+        return a + b;
     }
+
 
     // Método que encuentra el mayor de tres números enteros
     public int mayorDeTresNumeros(int a, int b, int c) {
-        return Math.max(a, Math.max(b, c));
+        int mayor = a;
+
+        if (b > mayor) mayor = b;
+        if (c > mayor) mayor = c;
+
+        return mayor;
     }
 
     // Método que retorna la tabla de multiplicar de un número
@@ -109,18 +114,36 @@ public class Workshop {
 
     // Método que encuentra el elemento mayor en un arreglo
     public int encontrarElementoMayor(int[] arreglo) {
-        // TODO: Implementar el método para encontrar el elemento mayor en un arreglo.
-        // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 5.
-        return 0;
-    }
+        if (arreglo == null || arreglo.length == 0) {
+            throw new IllegalArgumentException("El arreglo no puede estar vacío.");
+        }
 
+        int mayor = arreglo[0];
+
+        for (int num : arreglo) {
+            if (num > mayor) {
+                mayor = num;
+            }
+        }
+
+        return mayor;
+    }
     // Método que encuentra el elemento menor en un arreglo
     public int encontrarElementoMenor(int[] arreglo) {
-        // TODO: Implementar el método para encontrar el elemento menor en un arreglo.
-        // Ejemplo: Si arreglo = [1, 2, 3, 4, 5], el resultado debería ser 1.
-        return 0;
-    }
+        if (arreglo == null || arreglo.length == 0) {
+            throw new IllegalArgumentException("El arreglo no puede estar vacío.");
+        }
 
+        int menor = arreglo[0];
+
+        for (int num : arreglo) {
+            if (num < menor) {
+                menor = num;
+            }
+        }
+
+        return menor;
+    }
     // Método que busca un elemento en un arreglo
     public boolean buscarElemento(int[] arreglo, int elemento) {
         // TODO: Implementar el método para buscar un elemento en un arreglo.
