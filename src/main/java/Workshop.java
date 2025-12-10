@@ -213,12 +213,12 @@ public class Workshop {
     public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
         int[] resultado = new int[arreglo1.length + arreglo2.length];
 
-        // Copiar arreglo1
+
         for (int i = 0; i < arreglo1.length; i++) {
             resultado[i] = arreglo1[i];
         }
 
-        // Copiar arreglo2
+
         for (int i = 0; i < arreglo2.length; i++) {
             resultado[arreglo1.length + i] = arreglo2[i];
         }
@@ -228,20 +228,23 @@ public class Workshop {
 
     // Método que rota un arreglo n posiciones
     public int[] rotarArreglo(int[] arreglo, int posiciones) {
+        if (arreglo == null) return null;
         int n = arreglo.length;
+        if (n == 0) return new int[0];
+        if (n == 1) return arreglo.clone();
+
+        int k = ((posiciones % n) + n) % n;
+        if (k == 0) return arreglo.clone();
+
         int[] resultado = new int[n];
 
-        // Asegurar que posiciones no sea mayor al tamaño
-        posiciones = posiciones % n;
+        System.arraycopy(arreglo, n - k, resultado, 0, k);
 
-        // Copiar los elementos rotados
-        for (int i = 0; i < n; i++) {
-            int nuevaPos = (i + posiciones) % n;
-            resultado[i] = arreglo[nuevaPos];
-        }
+        System.arraycopy(arreglo, 0, resultado, k, n - k);
 
         return resultado;
     }
+
 
     // Método que cuenta los caracteres en una cadena
     public int contarCaracteres(String cadena) {
