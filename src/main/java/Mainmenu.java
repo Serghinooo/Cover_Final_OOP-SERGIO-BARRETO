@@ -3,11 +3,12 @@ import java.util.Arrays ;
 
 public class Mainmenu {
     private JTabbedPane tabbedPane1;
-    private JTextField inputArray;
-    private JButton btnOrdenar;
-    private JButton btnInvertir;
-    private JButton btnPromedio;
-    private JLabel lblResultado;
+    private JPanel panel1;
+
+    private void createUIComponents() {
+        panel1 = new JPanel();
+        panel1.setLayout(new GridLayout(1, 3)); // 3 filas, 1 columna
+    }
 
 }
 
