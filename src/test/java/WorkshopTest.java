@@ -352,6 +352,7 @@ public class WorkshopTest {
            }
 
 
+
     @Test
     public void testValidarCorreoElectronico() {
         // Test 1: Correo electrónico válido
